@@ -3,36 +3,40 @@ import { NavLink } from 'react-router-dom'
 import './Nav.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart, faSearch, faUser } from '@fortawesome/free-solid-svg-icons'
+import SCdropdown from './SkincareDD.js'
 
 
-const Post= props => { 
+const Nav = props => { 
     return (
         <div className="extendnav">
             <div className = 'navigation'>
                 <img src = "https://theordinary.com/Images/logo.svg" alt="logo"/>
-                <nav>
-                    <NavLink to='/collections/skincare'>
-                        SKINCARE
-                    </NavLink>
-                    <NavLink to='/pages/routine'>
+                <div className= "navDiv">
+                    <div className="skincarediv">
+                        <NavLink to='/collections/skincare'>
+                            SKINCARE
+                        </NavLink>
+                        <SCdropdown/>
+                    </div>
+                    <NavLink className='routineNav' to='/pages/routine'>
                         ROUTINE
                     </NavLink>
-                    <NavLink to='/collections/best-sellers'>
+                    <NavLink className='navitems' to='/collections/best-sellers'>
                         BEST SELLERS
                     </NavLink>
-                    <NavLink to='/pages/brands'>
+                    <NavLink className='brandsNav' to='/pages/brands'>
                         BRANDS
                     </NavLink>
-                    <NavLink to='/pages/get-started'>
+                    <NavLink className='getstartedNav' to='/pages/get-started'>
                         GET STARTED
                     </NavLink>
-                    <NavLink to='/pages/rewards'>
+                    <NavLink className='navitems' to='/pages/rewards'>
                         REWARDS
                     </NavLink>
-                    <NavLink to='/collections/sale'>
+                    <NavLink className='navitems' to='/collections/sale'>
                         SALE
                     </NavLink>
-                </nav>
+                </div>
                 <div className="navicons">
                     <FontAwesomeIcon  icon={faShoppingCart} size={70}/>
                     <FontAwesomeIcon  icon={faUser} />
@@ -46,4 +50,4 @@ const Post= props => {
     );
 }
 
-export default Post;
+export default Nav;
