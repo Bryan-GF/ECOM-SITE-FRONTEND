@@ -10,7 +10,9 @@ const Nav = props => {
     return (
         <div className="extendnav">
             <div className = 'navigation'>
-                <img src = "https://theordinary.com/Images/logo.svg" alt="logo"/>
+                <div className="logo">
+                    <img src = "https://theordinary.com/Images/logo.svg" alt="logo"/>
+                </div>
                 <div className= "navDiv">
                     <div className="skincarediv">
                         <NavLink to='/collections/skincare'>
@@ -37,10 +39,10 @@ const Nav = props => {
                         SALE
                     </NavLink>
                 </div>
-                <div className="navicons">
+                <div className="navicons-wrap">
                     <FontAwesomeIcon  icon={faShoppingCart} size={70}/>
                     <FontAwesomeIcon  icon={faUser} />
-                    <FontAwesomeIcon  icon={faSearch} />
+                    <FontAwesomeIcon  className="search" icon={faSearch} />
                 </div>
                 {/* Profile Component*/}
                 {/* Cart Component */}
