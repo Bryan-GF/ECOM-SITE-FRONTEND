@@ -1,0 +1,116 @@
+.navigation {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 50px;
+    padding: 10px 30px 10px 30px;
+    
+}
+
+.extendnav {
+    border-bottom: 1px solid lightgrey;
+    width: 100%;
+}
+
+.logo {
+    flex-grow: 3;
+    display: flex;
+    justify-content: flex-start;
+}
+.logo img {
+    height: 50px;
+    
+}
+.navigation .navDiv {
+    
+    align-self: center;
+    justify-content: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navigation .navDiv a {
+    text-decoration: none;
+    color: black;
+    margin: 0 15px;
+}
+
+.navicons-wrap {
+    display: flex;
+    flex-wrap: nowrap;
+    
+    align-items: center;
+    justify-content: flex-end;
+    flex-grow: 3;
+
+}
+
+.navicons-wrap svg {
+    padding: 0px 20px 0 20px;
+}
+
+.navicons-wrap .search {
+    padding-right: 0px;
+}
+
+.dropdown {
+    display:none;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    z-index: 1;
+    background-color:#f5f5ef;
+    top: 70px;
+}
+
+.sc {
+    width: 33%;
+    /*Test*/
+}
+
+
+.dropdown-content {
+    display: block;
+    width: 960px;
+    margin: 0 auto; 
+}
+
+.navigation .skincarediv:hover .dropdown {
+    display: block;
+}
+
+.dropdown-content  {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.dropdown-content img {
+    height: 275px;
+    padding-top: 30px;
+}
+
+.dropdown-content .dropdown-child {
+    display: flex;
+    flex-wrap: wrap;
+    width: 75%;
+}
+
+.dropdown-content li {
+    text-align: start;
+    padding: 30px 0px 20px 0px;
+    font-weight: bolder;
+    font-size: 13px;
+}
+
+.dropdown-content li ul {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.dropdown-content li ul a {
+    width: 100%;
+    font-weight: normal;
+    padding: 9px 0;
+    
+}
+
