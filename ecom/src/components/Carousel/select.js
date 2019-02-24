@@ -7,7 +7,7 @@ const Select = props => {
     let items = [];
 
     for(let i = 0; i < props.length; i++) {
-        items.push(<button id={i}></button>)
+        items.push(<button onClick ={props.selectFunc} id={i}></button>)
     }
     return (
         <div className="select-buttons">

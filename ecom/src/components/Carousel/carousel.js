@@ -13,19 +13,23 @@ class Carousel extends Component {
   }
 
   nextSlide = (ev) => {
-
+    console.log("Check RIGHT");
   }
 
   prevSlide = (ev) => {
+    console.log("Check LEFT");
+  }
 
+  selectSlide = (ev) => {
+    console.log(ev.target.id);
   }
 
   render() {
     return (
       <div className="Carousel-Wrapper">
-        <Arrow className="left" type="left"/>
-        <Arrow className="right" type="right"/>
-        <Select length={this.state.images.length}/>
+        <Arrow className="left" type="left" pSlide={this.prevSlide}/>
+        <Arrow className="right" type="right" nSlide={this.nextSlide}/>
+        <Select length={this.state.images.length} selectFunc={this.selectSlide}/>
       </div>
     );
   }

@@ -1,13 +1,13 @@
 import React from 'react';
-import './Carousel.css'
+import './carousel.css'
 
 /* NEED TO UPDATE NAVLINK ROUTING*/
 const Arrow = props => { 
     let btnDirection;
     if(props.type == "left") {
-        btnDirection = <button> right </button>
+        btnDirection = <button onClick={props.pSlide}> left </button>
     } else {
-        btnDirection = <button> left </button>
+        btnDirection = <button onClick={props.nSlide}> right </button>
     }
     return (
         <div className="arrows">
