@@ -8,6 +8,7 @@ import {withRouter} from 'react-router';
 import { NavLink} from 'react-router-dom';
 import Navigation from './components/Navigation';
 import axios from 'axios';
+import HomePage from './components/HomePage/homepage';
 
 class App extends Component {
   constructor(props) {
@@ -20,6 +21,7 @@ class App extends Component {
     return (
       <div className="App">
         <Navigation/>
+        <HomePage/>
       </div>
     );
   }
