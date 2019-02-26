@@ -9,7 +9,7 @@ class Carousel extends Component {
     super(props);
     this.state = {
         currentImageIndex: 0,
-        images: ["https://divinotes.com/wp-content/uploads/2017/08/Free-WordPress-Logo-Carousel-hero-1280x640.jpg", "http://d263ao8qih4miy.cloudfront.net/wp-content/uploads/2019/02/item0100525a.jpg", '//cdn.shopify.com/s/files/1/0249/1218/files/calming_and_healing_mobile_v1_782x.png?v=1549050776'],
+        images: ["https://divinotes.com/wp-content/uploads/2017/08/Free-WordPress-Logo-Carousel-hero-1280x640.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOU4-vhQ5T5WFhr6MeEww05Czhzm7RZvoSL4CoOF_gnvp8HHen5Q", '//cdn.shopify.com/s/files/1/0249/1218/files/calming_and_healing_mobile_v1_782x.png?v=1549050776'],
         translateValue: 0
     };
   }
@@ -39,10 +39,17 @@ class Carousel extends Component {
   selectSlide = (ev) => {
     console.log(ev.target.id)
     if(ev.target.id != this.state.currentImageIndex) {
-      this.setState({currentImageIndex: parseInt(ev.target.id)});
+      let movement = parseInt(ev.target.id) - this.state.currentImageIndex;
+      if (movement > 0) {
+        console.log(Math.abs(movement) * this.slideWidth());
+        this.setState({currentImageIndex: parseInt(ev.target.id), translateValue: (parseInt(ev.target.id)%3) * -(this.slideWidth())});
+        
+      } else {
+        console.log(Math.abs(movement) * this.slideWidth());
+        this.setState({currentImageIndex: parseInt(ev.target.id), translateValue: Math.abs(movement) * (parseInt(ev.target.id)%3) * -(this.slideWidth())});
+      }
+      
     }
-    
-    console.log(this.state.currentImageIndex);
   }
 
   render() {
