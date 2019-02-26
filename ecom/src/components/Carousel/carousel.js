@@ -9,31 +9,39 @@ class Carousel extends Component {
     super(props);
     this.state = {
         currentImageIndex: 0,
-        images: ["https://divinotes.com/wp-content/uploads/2017/08/Free-WordPress-Logo-Carousel-hero-1280x640.jpg", "http://d263ao8qih4miy.cloudfront.net/wp-content/uploads/2019/02/item0100525a.jpg", '//cdn.shopify.com/s/files/1/0249/1218/files/calming_and_healing_mobile_v1_782x.png?v=1549050776']
+        images: ["https://divinotes.com/wp-content/uploads/2017/08/Free-WordPress-Logo-Carousel-hero-1280x640.jpg", "http://d263ao8qih4miy.cloudfront.net/wp-content/uploads/2019/02/item0100525a.jpg", '//cdn.shopify.com/s/files/1/0249/1218/files/calming_and_healing_mobile_v1_782x.png?v=1549050776'],
+        translateValue: 0
     };
   }
 
   nextSlide = (ev) => {
     if(this.state.currentImageIndex === this.state.images.length -1) {
-        this.setState({currentImageIndex: 0});
+        this.setState(prevState => ({currentImageIndex: 0, translateValue: 0}));
     } else {
-        this.setState({currentImageIndex: (this.state.currentImageIndex + 1)});
+        this.setState(prevState => ({currentImageIndex: (prevState.currentImageIndex + 1), translateValue: prevState.translateValue + -(this.slideWidth())}));
     }
     console.log(this.state.currentImageIndex)
   }
 
   prevSlide = (ev) => {
     if(this.state.currentImageIndex === 0) {
-        this.setState({currentImageIndex: (this.state.images.length - 1)});
+        this.setState(prevState => ({currentImageIndex: (prevState.images.length - 1), translateValue: (prevState.images.length -1) * -(this.slideWidth())}));
     } else {
-        this.setState({currentImageIndex: (this.state.currentImageIndex - 1)});
+        this.setState(prevState => ({currentImageIndex: (prevState.currentImageIndex - 1), translateValue: prevState.translateValue + (this.slideWidth())}));
     }
     console.log(this.state.currentImageIndex)
   }
 
+  slideWidth = () => {
+    return document.querySelector('.slide').clientWidth
+  }
+
   selectSlide = (ev) => {
     console.log(ev.target.id)
-    this.setState({currentImageIndex: parseInt(ev.target.id)});
+    if(ev.target.id != this.state.currentImageIndex) {
+      this.setState({currentImageIndex: parseInt(ev.target.id)});
+    }
+    
     console.log(this.state.currentImageIndex);
   }
 
@@ -46,7 +54,11 @@ class Carousel extends Component {
                 transform: `translateX(${this.state.translateValue}px)`,
                 transition: 'transform ease-out 0.45s'
         }}>
-            <Slide image = {this.state.images[this.state.currentImageIndex]}/>
+              {this.state.images.map(image => {
+                return (
+                  <Slide image={image}/>
+                );
+              })}
         </div>
         <Arrow className="left" type="left" pSlide={this.prevSlide}/>
         <Arrow className="right" type="right" nSlide={this.nextSlide}/>

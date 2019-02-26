@@ -1,3 +1,23 @@
-.slide {
+.Carousel-Wrapper {
+    position: relative;
+  width: 100%;
+  margin: 0 auto;
+  height: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.Slider-Wrapper {
+    position: relative;
     height: 500px;
+    width: 100%;
+}
+
+.slide {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 60%;
 }
