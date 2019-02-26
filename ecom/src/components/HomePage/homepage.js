@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './homepage.css';
-import Carousel from '../Carousel/carousel';
+import Carousel from '../HPCarousel/carousel';
 
 class HomePage extends Component {
   constructor(props) {
