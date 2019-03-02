@@ -1,6 +1,7 @@
 .navigation {
     display: flex;
     flex-wrap: nowrap;
+    
     height: 50px;
     padding: 10px 30px 10px 30px;
     
@@ -9,6 +10,10 @@
 .extendnav {
     border-bottom: 1px solid lightgrey;
     width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    background-color:white;
 }
 
 .logo {
