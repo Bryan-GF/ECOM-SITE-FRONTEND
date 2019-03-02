@@ -28,14 +28,19 @@ class HomePage extends Component {
     return (
       <div className="Homepage-Wrapper">
         <Carousel/>
-        <div className="sctype-wrapper">
-          <div className="sctype-list">
-            <button name ="type" onClick={this.setType}>SHOP BY SKIN TYPE</button>
-            <button name ="concern" onClick={this.setType}>SHOP BY SKIN CONCERN</button>
-            <button name ="routine" onClick={this.setType}>SHOP BY ROUTINE</button>
-            <button name ="bestseller" onClick={this.setType} >SHOP BY BEST SELLERS</button>
-          </div> 
-          <ProductCarousel images={this.state.imagesObject[this.state.filterType]}/>
+        <div className="HomePage-Child-Wrapper">
+          <div className="sctype-wrapper">
+            <div className="sctype-list">
+              <button name ="type" onClick={this.setType}>SHOP BY SKIN TYPE</button>
+              <button name ="concern" onClick={this.setType}>SHOP BY SKIN CONCERN</button>
+              <button name ="routine" onClick={this.setType}>SHOP BY ROUTINE</button>
+              <button name ="bestseller" onClick={this.setType} >SHOP BY BEST SELLERS</button>
+            </div> 
+            <ProductCarousel images={this.state.imagesObject[this.state.filterType]}/>
+          </div>
+          <div className="Trending-Wrapper">
+            
+          </div>
         </div>
       </div>
     );
