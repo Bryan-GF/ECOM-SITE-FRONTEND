@@ -39,6 +39,32 @@ class HomePage extends Component {
             <ProductCarousel images={this.state.imagesObject[this.state.filterType]}/>
           </div>
           <div className="Trending-Wrapper">
+            <div className="trend-content">
+              <img src="https://cdn.shopify.com/s/files/1/0249/1218/files/Resized_800x.jpg?v=1549034063"></img>
+              <div className="trend-content-text">
+                <h3>Relax Your Skin And Your Mind</h3>
+                <p>A Soothing Vegan Sheet Mask</p>
+              </div>
+              <button>SHOP NOW</button>
+            </div>
+            <div className="trend-content">
+              <img src="https://cdn.shopify.com/s/files/1/0249/1218/files/Currently_Trending_-_BOKB_3_800x.jpg?v=1546468522"></img>
+              <div className="trend-content-text">
+                <h3>New to K-Beauty?</h3>
+                <p>Shop Our Best of K-Beauty Winners!</p>
+              </div>
+              <button>SHOP NOW</button>
+            </div>
+            <div className="trend-content">
+              <img src="https://cdn.shopify.com/s/files/1/0249/1218/files/DSC05130_copy_1_800x.png?v=1547764600"></img>
+              <div className="trend-content-text">
+                <h3>Ancient Ingredients, Modern Glow</h3>
+                <p>Skin Care That Stands The Test Of Time</p>
+              </div>
+              <button>SHOP NOW</button>
+            </div>
+            
+            
             
           </div>
         </div>

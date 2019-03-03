@@ -1,4 +1,50 @@
 .HomePage-Child-Wrapper {
     
     margin: 0 auto;
+    width: 100%;
 }
+
+
+/*TRENDING DIV*/
+
+.HomePage-Child-Wrapper .Trending-Wrapper{
+    margin: 30px;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.HomePage-Child-Wrapper .Trending-Wrapper .trend-content {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 31%;
+    align-items: center;
+}
+
+.HomePage-Child-Wrapper .Trending-Wrapper .trend-content .trend-content-text {
+    height: 85px; 
+    
+}
+
+.HomePage-Child-Wrapper .Trending-Wrapper .trend-content .trend-content-text h3 {
+    font-size: 2vw;
+}
+
+.HomePage-Child-Wrapper .Trending-Wrapper .trend-content .trend-content-text p {
+    font-size: 1.1rem;
+    width: 260px;
+    margin: 0 auto;
+    
+}
+
+.HomePage-Child-Wrapper .Trending-Wrapper .trend-content img {
+    height: calc(30vw);
+    width: 100%;
+}
+
+.HomePage-Child-Wrapper .Trending-Wrapper .trend-content button {
+    width: 12vw;
+    
+}
+
+/*///////////////////////////////////////////////////////////*/
