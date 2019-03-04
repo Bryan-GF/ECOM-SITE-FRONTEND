@@ -6,9 +6,10 @@ import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
 import {withRouter} from 'react-router';
 import { NavLink} from 'react-router-dom';
-import Navigation from './components/Navigation';
+import Navigation from './components/Nav-Footer/Navigation';
 import axios from 'axios';
 import HomePage from './components/HomePage/homepage';
+import Footer from './components/Nav-Footer/Footer';
 
 class App extends Component {
   constructor(props) {
@@ -22,6 +23,7 @@ class App extends Component {
       <div className="App">
         <Navigation/>
         <HomePage/>
+        <Footer/>
       </div>
     );
   }

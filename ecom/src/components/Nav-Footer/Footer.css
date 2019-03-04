@@ -1,0 +1,34 @@
+.Footer-Wrapper {
+    background: black;
+    color: white;
+    
+    
+}
+
+/* INSTAGRAM CONTENT*/
+.Footer-Instagram-Content {
+    width: 90%;
+    display: flex;
+    margin: 0 auto;
+}
+
+.Footer-Instagram-Content .Instagram-Info p{
+    font-size: 1.9vw;
+    text-align: start;
+    line-height: 3vw;
+}
+/*/////////////////////////////////////*/
+
+/*INFO CONTENT*/
+.Footer-Info-Content {
+   
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    
+}
+
+.Footer-Info-Content .Customer-Care{
+    
+}
+/*/////////////////////////////////////*/
