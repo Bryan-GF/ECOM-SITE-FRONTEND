@@ -7,28 +7,108 @@
 
 /* INSTAGRAM CONTENT*/
 .Footer-Instagram-Content {
-    width: 90%;
+    
     display: flex;
-    margin: 0 auto;
+    
+    justify-content: space-between;
+    padding: 40px 70px;
+}
+
+.Footer-Instagram-Content .Instagram-Info {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
 }
 
 .Footer-Instagram-Content .Instagram-Info p{
-    font-size: 1.9vw;
+    font-size: 2vw;
     text-align: start;
     line-height: 3vw;
+    width: 100%;
+}
+
+.Footer-Instagram-Content .Instagram-Footer-Images {
+    width: 70%;
+    height: auto;
+}
+
+.Footer-Instagram-Content .Instagram-Footer-Images img {
+    width: calc(20% - 10px);
+    
+    margin: 5px;
 }
 /*/////////////////////////////////////*/
 
 /*INFO CONTENT*/
 .Footer-Info-Content {
-   
     display: flex;
     width: 90%;
     margin: 0 auto;
-    
+    padding-top: 40px;
+    padding-bottom: 50px;
+    text-align: start;
+    font-size: 13px;
+}
+
+.Footer-Info-Content h3{
+    font-weight: 500;
+    font-size: 18px;
+    padding-bottom: 6px;
 }
 
 .Footer-Info-Content .Customer-Care{
-    
+    line-height: 30px;
+    width: 25%;
+}
+
+.Footer-Info-Content .Our-Story {
+    line-height: 30px;
+    width: 25%;
+}
+
+.Footer-Info-Content .Contact-Wrapper{
+    width: 50%;
+    display: flex;
+}
+
+.Footer-Info-Content .Contact-Wrapper .Subscriber-List{
+    width: 80%;
+    padding-right: 60px;
+}
+
+.Footer-Info-Content .Contact-Wrapper .Subscriber-List h3{
+   margin-bottom: 25px;
+}
+
+.Footer-Info-Content .Contact-Wrapper .Subscriber-List p{
+    margin-bottom: 15px;
+ }
+
+ .Footer-Info-Content .Contact-Wrapper .Subscriber-List input{
+    color: white;
+    width: 100%;
+    height: 40px;
+    background: black;
+    border: 1px solid #303030;
+    margin-bottom: 20px;
+ }
+
+ .Footer-Info-Content .Contact-Wrapper .Subscriber-List input::placeholder{
+    color: white;
+ }
+
+ .Footer-Info-Content .Contact-Wrapper .Subscriber-List button{
+    background: black;
+    color: white;
+    padding: 10px 20px;
+    border: 3px solid #ec008c;
+ }
+
+.Footer-Info-Content .Contact-Wrapper .Social-Media-Links{
+    width: 20%;
+    display: flex;
+    justify-content: flex-end;
 }
 /*/////////////////////////////////////*/
