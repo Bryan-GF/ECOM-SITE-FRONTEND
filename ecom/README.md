@@ -1,3 +1,14 @@
+### DOCKER INFO
+docker build -t $docker_username/ecom . <-- TO BUILD THE CONTAINER
+
+docker-compose build <-- TO UPDATE THE CONTAINER
+
+docker run -p 3000:3000 -d ecom_sample-app:latest <-- TO RUN THE CONTAINER
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

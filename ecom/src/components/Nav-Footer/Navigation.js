@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 import './Nav.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart, faSearch, faUser } from '@fortawesome/free-solid-svg-icons'
+
 import SCdropdown from './SkincareDD.js'
 
 
