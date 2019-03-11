@@ -6,6 +6,19 @@ docker-compose build <-- TO UPDATE THE CONTAINER
 docker run -p 3000:3000 -d ecom_sample-app:latest <-- TO RUN THE CONTAINER
 
 
+### KUBERNETE
+
+https://github.com/kubernetes/minikube/blob/master/docs/drivers.md#hyperv-driver
+
+https://medium.com/@JockDaRock/minikube-on-windows-10-with-hyper-v-6ef0f4dc158c
+
+kubectl delete --all namespaces
+
+https://developer.ibm.com/code/2018/04/03/deploy-app-kubernetes/
+
+kubectl get deploy -o yaml <-- GIVES DEPLOYMENT.YML FILE INFO (NODE PORT)
+
+bx cs workers ecom-deployment <-- GIVES SERVER INFO (IP)
 
 
 
