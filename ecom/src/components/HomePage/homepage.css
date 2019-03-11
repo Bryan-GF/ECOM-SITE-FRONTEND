@@ -12,6 +12,11 @@
     max-width: 100%;
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.HomePage-Child-Wrapper .Trending-Wrapper h2{
+    width: 100%;
 }
 
 .HomePage-Child-Wrapper .Trending-Wrapper .trend-content {
