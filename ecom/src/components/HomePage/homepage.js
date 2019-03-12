@@ -116,10 +116,18 @@ class HomePage extends Component {
                 SHOP ALL NEWLY CURATED
             </div>
           </div>
-          <div className="10step-ad">
-            <div className= "10step-info">
+          <div className="tenstep-ad">
+            <div className= "tenstep-info-wrapper">
+              <div className= "tenstep-info-content">
+                <div>SOKO GLAM'S ORIGINAL</div>
+                <h3>10-Step Korean Skincare Routine</h3>
+                <p>We introduced the “10-Step Korean Skincare Routine” to the world 5 years ago. Since then, we continue to educate, curate and provide access to the best of K–beauty.</p>
+                <div className="tenstep-button">
+                  LEARN MORE
+                </div>
+              </div>
             </div>
-            <div className= "10step-pic">
+            <div className= "tenstep-pic">
               <img src="https://cdn.shopify.com/s/files/1/0249/1218/files/10Step-Image_2x_0f4ef480-c7e2-4c72-b8da-a5169e855097_1024x.jpg?v=1531328726"></img>
             </div>
           </div>
