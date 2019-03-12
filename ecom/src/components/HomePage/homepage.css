@@ -49,7 +49,38 @@
 
 .HomePage-Child-Wrapper .Trending-Wrapper .trend-content button {
     width: 12vw;
-    
 }
 
 /*///////////////////////////////////////////////////////////*/
+
+/* CURATED DIV*/
+
+.HomePage-Child-Wrapper .Curated-Wrapper {
+    margin: 30px;
+    margin-left: 158px;
+    margin-right: 158px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: auto;
+}
+
+.HomePage-Child-Wrapper .Curated-Wrapper .content-wrapper {
+    display: flex;
+}
+
+.HomePage-Child-Wrapper .Curated-Wrapper h2{
+    width: 100%;
+}
+
+.HomePage-Child-Wrapper .Curated-Wrapper .curated-content {
+   
+    
+    padding: 10px;
+}
+
+.HomePage-Child-Wrapper .Curated-Wrapper .curated-content img{   
+    width: 100%;
+}
+/*//////////////////////////////////////////////////////////*/

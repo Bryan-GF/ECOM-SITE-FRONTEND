@@ -27,12 +27,12 @@
 
 .PCarousel-Wrapper .left .arrows button{
   left: 4.75vw;
-  z-index: 3;
+  z-index: 1;
 }
 
 .PCarousel-Wrapper .right .arrows button{
   right: 4.75vw;
-  z-index: 3;
+  z-index: 1;
 }
 
 

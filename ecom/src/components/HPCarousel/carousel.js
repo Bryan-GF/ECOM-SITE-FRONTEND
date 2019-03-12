@@ -9,7 +9,7 @@ class Carousel extends Component {
     super(props);
     this.state = {
         currentImageIndex: 0,
-        images: ["https://divinotes.com/wp-content/uploads/2017/08/Free-WordPress-Logo-Carousel-hero-1280x640.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOU4-vhQ5T5WFhr6MeEww05Czhzm7RZvoSL4CoOF_gnvp8HHen5Q", '//cdn.shopify.com/s/files/1/0249/1218/files/calming_and_healing_mobile_v1_782x.png?v=1549050776'],
+        images: ["https://cdn.shopify.com/s/files/1/0249/1218/files/DSC06980-8_banner_big_203c0218-2246-45cc-873d-96f6517b68f7_2048x.jpg?v=1549309596", "//cdn.shopify.com/s/files/1/0249/1218/files/Gym_Set_Homepage_Banner_resize_v2_2048x.png?v=1548693076", 'https://cdn.shopify.com/s/files/1/0249/1218/files/Beauty_of_Joseon_Homepage_Web_v3_2048x.png?v=1547230680'],
         translateValue: 0
     };
   }
@@ -70,3 +70,6 @@ class Carousel extends Component {
 }
 
 export default Carousel;
+
+/* WANT TO ADD FADING BUTTONS ON LEFT AND RIGHT OF THE CAROUSEL, 3 DOT SELECTION AT THE BOTTOM
+   NEED TO ADD BUTTON AND TEXT TO EACH SLIDE*/

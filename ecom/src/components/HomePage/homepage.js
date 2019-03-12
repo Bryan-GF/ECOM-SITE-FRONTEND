@@ -22,28 +22,28 @@ class HomePage extends Component {
              "price": "$22.00",
              "rating": 5,
              "numreviews": 1,
-             "image": "https://images.pexels.com/photos/1493326/pexels-photo-1493326.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"},
+             "image": "https://cdn.shopify.com/s/files/1/0249/1218/products/Mamonde_Starter_PDP_large.jpg?v=1551380013"},
             {"type": "newly-curated",
              "brand": "MISSHA",
              "name": "Super Off Cleansing Oil (Dryness Off)",
              "price": "$33.00",
              "rating": 4,
              "numreviews": 2,
-             "image": "https://images.pexels.com/photos/373882/pexels-photo-373882.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"},
+             "image": "https://cdn.shopify.com/s/files/1/0249/1218/products/Missha_Super_Off_Cleansing_Oil-_Dryness_Off_PDP_1_large.jpg?v=1550782291"},
             {"type" : "newly-curated",
              "brand": "DR ALTHEA",
              "name": "Dr.Althea Herb Therapy Velvet Mask (10 pack)",
              "price": "$29.00",
              "rating": 4.5,
              "numreviews": 1,
-             "image": "https://images.pexels.com/photos/1707920/pexels-photo-1707920.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"},
+             "image": "https://cdn.shopify.com/s/files/1/0249/1218/products/Dr._Althea_Herb_Therapy_Velvet_Mask_10_pack_PDP_1_large.jpg?v=1551842471"},
              {"type" : "newly-curated",
              "brand": "DR ALTHEA",
              "name": "Dr.Althea Herb Therapy Velvet Mask (10 pack)",
              "price": "$29.00",
              "rating": 4.5,
              "numreviews": 1,
-             "image": "https://images.pexels.com/photos/1707920/pexels-photo-1707920.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"}
+             "image": "https://cdn.shopify.com/s/files/1/0249/1218/products/Mamonde_Starter_PDP_large.jpg?v=1551380013"}
         ]
     };
   }
@@ -96,17 +96,32 @@ class HomePage extends Component {
               <button>SHOP NOW</button>
             </div> 
           </div>
-          <div className="newly-curated">
+          <div className="Curated-Wrapper">
             <h2>NEWLY CURATED</h2>
-            <div className="curated-content">
-              <ProductCapsule item={this.state.newlyCurated[0]}/>
-            </div>
-            <div className="curated-content">
-              <ProductCapsule item={this.state.newlyCurated[1]}/>
-            </div>
-            <div className="curated-content">
-              <ProductCapsule item={this.state.newlyCurated[2]}/>
+            <div className="content-wrapper">
+              <div className="curated-content">
+                <ProductCapsule item={this.state.newlyCurated[0]}/>
+              </div>
+              <div className="curated-content">
+                <ProductCapsule item={this.state.newlyCurated[1]}/>
+              </div>
+              <div className="curated-content">
+                <ProductCapsule item={this.state.newlyCurated[2]}/>
+              </div> 
+              <div className="curated-content">
+                <ProductCapsule item={this.state.newlyCurated[3]}/>
+              </div>
             </div> 
+            <div className="curated-button">
+                SHOP ALL NEWLY CURATED
+            </div>
+          </div>
+          <div className="10step-ad">
+            <div className= "10step-info">
+            </div>
+            <div className= "10step-pic">
+              <img src="https://cdn.shopify.com/s/files/1/0249/1218/files/10Step-Image_2x_0f4ef480-c7e2-4c72-b8da-a5169e855097_1024x.jpg?v=1531328726"></img>
+            </div>
           </div>
         </div>
       </div>
