@@ -3,6 +3,9 @@ import './homepage.css';
 import Carousel from '../HPCarousel/carousel';
 import ProductCarousel from '../ItemCarousel/productCarousel';
 import ProductCapsule from '../Product/productCapsule';
+import { NavLink} from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHourglass } from '@fortawesome/free-regular-svg-icons'
 
 class HomePage extends Component {
   constructor(props) {
@@ -44,11 +47,11 @@ class HomePage extends Component {
              "rating": 4.5,
              "numreviews": 1,
              "image": "https://cdn.shopify.com/s/files/1/0249/1218/products/Mamonde_Starter_PDP_large.jpg?v=1551380013"}
-        ]
+        ],
+        
+        
     };
   }
-
-  
 
   setType = (ev) => {
     this.setState({filterType: ev.target.name})
@@ -56,6 +59,7 @@ class HomePage extends Component {
   }
 
   render() {
+  
     return (
       <div className="Homepage-Wrapper">
         <Carousel/>
@@ -130,6 +134,27 @@ class HomePage extends Component {
             <div className= "tenstep-pic">
               <img src="https://cdn.shopify.com/s/files/1/0249/1218/files/10Step-Image_2x_0f4ef480-c7e2-4c72-b8da-a5169e855097_1024x.jpg?v=1531328726"></img>
             </div>
+          </div>
+          <div className ="routine-sets">
+            <p>Get started with our curated Korean Skincare Routine Sets!</p>
+            <div className="routine-content">
+                <NavLink id="five" className="fivestep" to="/collections/5-step-korean-skincare-sets">5 Step</NavLink>
+                <NavLink id="ten" to="/collections/10-steps-sets">10 Step</NavLink>
+              <div className="set-icons">
+                <FontAwesomeIcon id="check5" icon={faHourglass} />
+                <FontAwesomeIcon id="check5" icon={faHourglass} />
+                <FontAwesomeIcon id="check5" icon={faHourglass} />
+                <FontAwesomeIcon id="check5" icon={faHourglass} />
+                <FontAwesomeIcon id="check5" icon={faHourglass} />
+                <FontAwesomeIcon id="check10" icon={faHourglass} />
+                <FontAwesomeIcon id="check10" icon={faHourglass} />
+                <FontAwesomeIcon id="check10" icon={faHourglass} />
+                <FontAwesomeIcon id="check10" icon={faHourglass} />
+                <FontAwesomeIcon id="check10" icon={faHourglass} />
+                
+              </div>
+            </div>
+              
           </div>
         </div>
       </div>
