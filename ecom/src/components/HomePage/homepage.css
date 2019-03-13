@@ -122,14 +122,25 @@
 .routine-sets  p {
     color: #539ac0;
 }
-
+.routine-sets .set-icons {
+    width: 400px;
+}
 .routine-sets .routine-content {
     display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column-reverse;
+    flex-wrap: wrap-reverse;
+    justify-content: center;;
+}
+
+#five {
+    text-align: end;
+}
+
+#ten {
+    text-align: start;
 }
 
 #five, #ten {
+    width: 50%;
     color: #ec138d
 }
 
