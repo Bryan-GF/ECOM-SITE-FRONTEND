@@ -182,3 +182,12 @@
     background-repeat: no-repeat;
     background-position: 50% 60%;
 }
+
+.pressSlide {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 60%;
+}
