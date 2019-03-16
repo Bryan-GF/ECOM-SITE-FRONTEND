@@ -104,12 +104,8 @@ class HomePage extends Component {
             "text": "Korean beauty retailer Soko Glam is no stranger to sell-outs. So well curated is its selection of under-the-radar and already-viral beauty products that the risk of missing out is very real. But the e-tailer's travel kit may have just set a record — it sold out in less than 24 hours.",
             "author": "Macaela Mackenzie",
           }
-        ]
-
-
-        
-        
-        
+        ],
+        pressImages: ["https://cdn.shopify.com/s/files/1/0249/1218/files/Marie_Claire_300x.png?v=1533750316", "https://cdn.shopify.com/s/files/1/0249/1218/files/Paper_300x.png?v=1533750342", "https://cdn.shopify.com/s/files/1/0249/1218/files/Vanity_Fair_300x.png?v=1533750357", "https://cdn.shopify.com/s/files/1/0249/1218/files/Allure_logo.svg_copy_300x.png?v=1533149550"],    
     };
   }
 
@@ -232,7 +228,7 @@ A Soko Glam project.</p>
               }
             </div>
             <div className="press-container">
-                <Carousel className="TEST" check="pressSlide" content={this.state.pressCarousel} />
+                <Carousel className="TEST" check="pressSlide" content={this.state.pressCarousel} logos={this.state.pressImages}/>
             </div>
           </div> 
         </div>

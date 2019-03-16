@@ -35,19 +35,24 @@ class Carousel extends Component {
   }
 
   selectSlide = (ev) => {
+      console.log(ev.target.id)
+      console.log(this.state.currentIndex);
     let contentID = parseInt(ev.target.id);
     if(contentID != this.state.currentIndex) {
+        
       let movement = Math.abs(contentID - this.state.currentIndex);
+      
       if (movement > 0) {
-        this.setState({currentIndex: contentID, translateValue: (contentID%3) * -(this.slideWidth())});  
+        console.log(movement)
+        console.log(contentID)
+        this.setState({currentIndex: contentID, translateValue: (contentID%this.props.content.length) * -(this.slideWidth())});  
       } else {
-        this.setState({currentIndex: contentID, translateValue: movement * (contentID%3) * -(this.slideWidth())});
+        this.setState({currentIndex: contentID, translateValue: movement * (contentID%this.props.content.length) * -(this.slideWidth())});
       }
     }
   }
 
   render() {
-     
     return (
       <div className="Carousel-Wrapper">
         <div className="Slider-Wrapper"
@@ -64,7 +69,7 @@ class Carousel extends Component {
         </div>
         <Arrow className="left" type="left" pSlide={this.prevSlide}/>
         <Arrow className="right" type="right" nSlide={this.nextSlide}/>
-        <Select length={this.props.content.length} selectFunc={this.selectSlide}/>
+        <Select length={this.props.content.length} selectFunc={this.selectSlide} logos={this.props.logos}/>
       </div>
     );
   }
