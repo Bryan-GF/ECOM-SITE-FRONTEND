@@ -1,5 +1,5 @@
 import React from 'react';
-import './carousel.css'
+import '../HomePage/homepage.css'
 
 /* NEED TO UPDATE NAVLINK ROUTING*/
 const Arrow = props => { 

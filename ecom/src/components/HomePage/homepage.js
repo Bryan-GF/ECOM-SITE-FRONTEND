@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './homepage.css';
-import Carousel from '../HPCarousel/carousel';
+import Carousel from '../Carousel/carousel';
 import ProductCarousel from '../ItemCarousel/productCarousel';
 import ProductCapsule from '../Product/productCapsule';
+import Article from '../klog/article';
 import { NavLink} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHourglass } from '@fortawesome/free-regular-svg-icons'
@@ -48,6 +49,65 @@ class HomePage extends Component {
              "numreviews": 1,
              "image": "https://cdn.shopify.com/s/files/1/0249/1218/products/Mamonde_Starter_PDP_large.jpg?v=1551380013"}
         ],
+        klogTextContent: [
+          {
+            "type": "SKINCARE",
+            "img":  "https://cdn.shopify.com/s/files/1/0249/1218/files/gym-set-SGHP_800x.jpg?v=1548695689",
+            "content": "The K-Beauty Products No Skin Care Junkie’s Gym Bag Should Be Without",
+            "link": "https://theklog.co/soko-glam-gym-set-k-beauty/"
+          },
+          {
+            "type": "SKINCARE",
+            "img": "https://cdn.shopify.com/s/files/1/0249/1218/files/2019_K_Beauty_Predictions_-11_800x.jpg?v=1546446912",
+            "content": "These Are Going to Be the Biggest K-Beauty Trends in 2019, According to Charlotte Cho",
+            "link": "https://theklog.co/k-beauty-trends-2019/"
+          },
+          {
+            "type": "SKINCARE",
+            "img": "https://cdn.shopify.com/s/files/1/0249/1218/files/Ginger_-_Klog-HP_800x.jpg?v=1547491531",
+            "content": "Why Ginseng Is the Natural Ingredient Your Anti-Aging Skin Care Routine Is Missing",
+            "link": "https://theklog.co/ginseng-skin-benefits/"
+          }
+        ],
+        headerCarousel: [
+          {
+            "type": "header",
+            "image": "https://cdn.shopify.com/s/files/1/0249/1218/files/DSC06980-8_banner_big_203c0218-2246-45cc-873d-96f6517b68f7_2048x.jpg?v=1549309596"
+          },
+          { 
+            "type": "header",
+            "image": "https://cdn.shopify.com/s/files/1/0249/1218/files/Gym_Set_Homepage_Banner_resize_v2_2048x.png?v=1548693076"
+          },
+          {
+            "type": "header",
+            "image": "https://cdn.shopify.com/s/files/1/0249/1218/files/Beauty_of_Joseon_Homepage_Web_v3_2048x.png?v=1547230680"
+          }
+        ],
+        pressCarousel: [
+          {
+            "type": "press",
+            "text": "Soko Glam - everyone’s favorite Korean beauty product e-commerce destination.",
+            "author": "India-Jewel Jackson",
+          },
+          { 
+            "type": "press",
+            "text": "When it comes to beauty extraordinaire and creator of the fan-favorite K-Beauty skincare outlet, Soko Glam, Cho is all about keeping your skin healthy and hydrated for a naturally glowing look.",
+            "author": "Jennifer Hussein",
+          },
+          {
+            "type": "press",
+            "text": "I embarked on a two-week challenge to follow a Korean skin-care routine every morning and every night using the products in the Soko Glam 10-Step Korean Skin Care Routine Set. The result is the elusive clear, smooth skin I’ve been chasing after—no joke.",
+            "author": "Audrey Noble",
+          },
+          {
+            "type": "press",
+            "text": "Korean beauty retailer Soko Glam is no stranger to sell-outs. So well curated is its selection of under-the-radar and already-viral beauty products that the risk of missing out is very real. But the e-tailer's travel kit may have just set a record — it sold out in less than 24 hours.",
+            "author": "Macaela Mackenzie",
+          }
+        ]
+
+
+        
         
         
     };
@@ -62,7 +122,7 @@ class HomePage extends Component {
   
     return (
       <div className="Homepage-Wrapper">
-        <Carousel/>
+        <Carousel className="headerCarousel" check="headerSlide" content={this.state.headerCarousel}/>
         <div className="HomePage-Child-Wrapper">
           <div className="sctype-wrapper">
             <div className="sctype-list">
@@ -150,12 +210,31 @@ class HomePage extends Component {
                 <FontAwesomeIcon id="check10" icon={faHourglass} />
                 <FontAwesomeIcon id="check10" icon={faHourglass} />
                 <FontAwesomeIcon id="check10" icon={faHourglass} />
-                <FontAwesomeIcon id="check10" icon={faHourglass} />
-                
+                <FontAwesomeIcon id="check10" icon={faHourglass} /> 
               </div>
             </div>
-              
           </div>
+          <div className="theklog-container">
+            <div className="klog-header"> 
+              <h2>the klog</h2>
+              <p>Your skin care guide, inspired by Korean beauty. 
+A Soko Glam project.</p>
+              <a href="https://theklog.co/?utm_source=sokoglam&utm_medium=banner&utm_term=&utm_content=&utm_campaign=">
+                Visit The Klog
+              </a>
+            </div>
+            <div className="article-container">
+              {this.state.klogTextContent.map(article => {
+                return( 
+                  <Article article={article}/>
+                )
+              })
+              }
+            </div>
+            <div className="press-container">
+                <Carousel className="TEST" check="pressSlide" content={this.state.pressCarousel} />
+            </div>
+          </div> 
         </div>
       </div>
     );

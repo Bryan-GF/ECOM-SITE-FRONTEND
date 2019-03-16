@@ -1,6 +1,6 @@
 
 import React from 'react'
-import './carousel.css';
+import '../HomePage/homepage.css'
 
 const Slide = ({ image }) => {
   const styles = {
