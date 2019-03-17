@@ -39,6 +39,21 @@ class ProductPage extends Component {
 
   }
 
+  handleChange = (ev) => {
+      this.setState({
+          [ev.target.name]: parseInt(ev.target.value)
+      })
+  }
+
+  handleQuantity = (ev) => {
+    if(ev.target.name == "decrement" && this.state.quantity != 1) {
+        this.setState({quantity: this.state.quantity-=1})
+    } else if(ev.target.name == "increment") {
+        console.log(this.state.quantity)
+        this.setState({quantity: this.state.quantity+=1})
+    }
+  }
+
   selectTab = (ev) => { 
     if(ev.target.name != this.state.lastTab) {  
         let hide =  document.querySelector(`.${this.state.lastTab}`);
@@ -66,9 +81,9 @@ class ProductPage extends Component {
             </div>
             <div className="product-bag">
                 <div className="quantity-wrapper">
-                    <button>-</button>
-                    <div>{this.state.quantity}</div>
-                    <button>+</button>
+                    <button name="decrement" onClick={this.handleQuantity}>-</button>
+                    <input type="number" name="quantity" value={this.state.quantity} onInput={this.handleChange}></input>
+                    <button name="increment" onClick={this.handleQuantity}>+</button>
                 </div>
                 <div className="bag-button">
                     <button>ADD TO BAG</button>
