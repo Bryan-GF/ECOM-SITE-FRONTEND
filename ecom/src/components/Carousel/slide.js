@@ -5,20 +5,20 @@ import '../HomePage/homepage.css'
 const Slide = (props) => {
     let div;
     
-    if(props.check === "headerSlide") {
-      console.log(props.check);
-      console.log(props.content.image)
-        const styles = {
-            backgroundImage: `url(${props.content.image})`,
-          }
-        return (<div className={props.check} style={styles}></div>);
+    if(props.check === "pressSlide") {
+      return (
+          
+        <div className={props.check}>
+          <p>{props.content.text}</p>
+          <p>{props.content.author}</p>
+        </div>
+      )
     } else {
-        return (
-          <div className={props.check}>
-            <p>{props.content.text}</p>
-            <p>{props.content.author}</p>
-          </div>
-        )
+      const styles = {
+        backgroundImage: `url(${props.content})`,
+      }
+      return (<div className={props.check} style={styles}></div>);
+        
     }
 }
   

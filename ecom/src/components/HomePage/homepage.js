@@ -70,18 +70,7 @@ class HomePage extends Component {
           }
         ],
         headerCarousel: [
-          {
-            "type": "header",
-            "image": "https://cdn.shopify.com/s/files/1/0249/1218/files/DSC06980-8_banner_big_203c0218-2246-45cc-873d-96f6517b68f7_2048x.jpg?v=1549309596"
-          },
-          { 
-            "type": "header",
-            "image": "https://cdn.shopify.com/s/files/1/0249/1218/files/Gym_Set_Homepage_Banner_resize_v2_2048x.png?v=1548693076"
-          },
-          {
-            "type": "header",
-            "image": "https://cdn.shopify.com/s/files/1/0249/1218/files/Beauty_of_Joseon_Homepage_Web_v3_2048x.png?v=1547230680"
-          }
+          "https://cdn.shopify.com/s/files/1/0249/1218/files/DSC06980-8_banner_big_203c0218-2246-45cc-873d-96f6517b68f7_2048x.jpg?v=1549309596", "https://cdn.shopify.com/s/files/1/0249/1218/files/Gym_Set_Homepage_Banner_resize_v2_2048x.png?v=1548693076","https://cdn.shopify.com/s/files/1/0249/1218/files/Beauty_of_Joseon_Homepage_Web_v3_2048x.png?v=1547230680"
         ],
         pressCarousel: [
           {
@@ -118,7 +107,7 @@ class HomePage extends Component {
   
     return (
       <div className="Homepage-Wrapper">
-        <Carousel className="headerCarousel" check="headerSlide" content={this.state.headerCarousel}/>
+        <Carousel className="headerCarousel" check="headerSlide" type="header" content={this.state.headerCarousel}/>
         <div className="HomePage-Child-Wrapper">
           <div className="sctype-wrapper">
             <div className="sctype-list">
@@ -228,7 +217,7 @@ A Soko Glam project.</p>
               }
             </div>
             <div className="press-container">
-                <Carousel className="TEST" check="pressSlide" content={this.state.pressCarousel} logos={this.state.pressImages}/>
+                <Carousel className="TEST" check="pressSlide" type="press" content={this.state.pressCarousel} logos={this.state.pressImages}/>
             </div>
           </div> 
         </div>

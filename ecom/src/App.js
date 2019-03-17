@@ -10,6 +10,7 @@ import Navigation from './components/Nav-Footer/Navigation';
 import axios from 'axios';
 import HomePage from './components/HomePage/homepage';
 import Footer from './components/Nav-Footer/Footer';
+import ProductPage from './components/ProductPage/productpage';
 
 class App extends Component {
   constructor(props) {
@@ -24,6 +25,7 @@ class App extends Component {
         <Navigation/>
         <HomePage/>
         <Footer/>
+        <ProductPage></ProductPage>
       </div>
     );
   }

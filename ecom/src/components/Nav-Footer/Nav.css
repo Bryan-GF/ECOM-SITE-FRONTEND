@@ -8,10 +8,12 @@
     
     height: 50px;
     padding: 10px 30px 10px 30px;
+   
     
 }
 
 .extendnav {
+    
     border-bottom: 1px solid lightgrey;
     width: 100%;
     position: fixed;
