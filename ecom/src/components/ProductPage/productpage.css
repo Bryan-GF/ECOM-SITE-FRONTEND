@@ -22,3 +22,13 @@
     background-repeat: no-repeat;
     background-position: 50% 60%;
 }
+
+
+.extra-info {
+    width: 20%;
+    white-space: pre-wrap;
+}
+
+.extra-info .hide {
+    display: none;
+}

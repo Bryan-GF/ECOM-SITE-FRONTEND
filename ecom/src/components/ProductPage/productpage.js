@@ -5,7 +5,8 @@ import Article from '../klog/article';
 import { NavLink} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
-import ProductTabs from './tabs';
+import { faFacebookF, faTwitter, faPinterest } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 class ProductPage extends Component {
   constructor(props) {
@@ -28,9 +29,8 @@ class ProductPage extends Component {
             "https://cdn.shopify.com/s/files/1/0249/1218/products/Step_2-3_full_size_460x.jpg?v=1552488862","https://cdn.shopify.com/s/files/1/0249/1218/products/Step_3_460x.jpg?v=1552488866"],
         },
         quantity: 1,
-        selectedTab: 1,
         //WILL USE lastUsed for activating and deactivating hidden class
-        lastUsed="details"
+        lastTab:"details"
     };
   }
   
@@ -39,9 +39,16 @@ class ProductPage extends Component {
 
   }
 
-  selectTab = (ev) => {
-    this.setState({selectedTab: ev.target.id})
-    console.log(this.state.selectedTab);
+  selectTab = (ev) => { 
+    if(ev.target.name != this.state.lastTab) {  
+        let hide =  document.querySelector(`.${this.state.lastTab}`);
+        let activate =  document.querySelector(`.${ev.target.name}`);
+        hide.classList.add('hide')
+        hide.classList.remove('active')
+        activate.classList.add('active')
+        activate.classList.remove('hide')
+        this.setState({lastTab: ev.target.name})
+    } 
   }
 
   render() {
@@ -72,13 +79,36 @@ class ProductPage extends Component {
             </div>
             <div className="extra-info">
                 <div className="product-tab-selector">
-                    <label id={1} onCLick={this.selectTab}>Details</label>
-                    <label id={2} onCLick={this.selectTab}>ingredients</label>
-                    <label id={3} onCLick={this.selectTab}>How To Use</label>
-                    <label id={4} onCLick={this.selectTab}>Share</label>
+                    <button  name="details" onClick={this.selectTab}>Details</button>
+                    <button  name="ingredients" onClick={this.selectTab}>Ingredients</button>
+                    <button  name="howto" onClick={this.selectTab}>How To Use</button>
+                    <button  name="share" onClick={this.selectTab}>Share</button>
                 </div>
-                <div className="product-tab-content">
-                    
+                <div className="details active">
+                    <span>{product.details}</span>
+                    <p> </p>
+                    <p>{product.size}</p>
+                </div>
+                <div className="ingredients hide">
+                    <h4>Ingredients We Love</h4>
+                    <p>{product.lovedIngredients}</p>
+                    <div className="tab-content-short active">
+                        <span>See all ingredients</span>
+                    </div>
+                    <div className="tab-content-long hide">
+                        <h4>Full List of Ingredients</h4>
+                        <p>{product.ingredients}</p>
+                        <span>Show Less</span>
+                    </div>
+                </div>
+                <div className="howto hide">
+                    <span>{product.howTo}</span>
+                </div>
+                <div className="share hide">
+                    <FontAwesomeIcon icon={faFacebookF}/>
+                    <FontAwesomeIcon icon={faTwitter}/>
+                    <FontAwesomeIcon icon={faPinterest}/>
+                    <FontAwesomeIcon icon={faEnvelope}/>
                 </div>
             </div>
         </div>
