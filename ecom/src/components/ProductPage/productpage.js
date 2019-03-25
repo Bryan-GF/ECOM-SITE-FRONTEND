@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import { faFacebookF, faTwitter, faPinterest } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import ReviewSection from './reviewSection';
 
 class ProductPage extends Component {
   constructor(props) {
@@ -27,10 +28,13 @@ class ProductPage extends Component {
             "howTo": "After cleansing, pour a generous amount of your favorite essence, toner, or serum (we recommend using a watery formula and avoiding any products that contain AHAs, BHAs, or retinol) into the palm of your hand as your base. Mix one scoop of the Real Vita C Powder with the base product allowing 5-10 seconds for the powder to dissolve. \n\nNote: If you notice a grainy texture after mixing, we recommend adding more base product.\n\nApply the mixture to your entire face and continue your skincare routine. \n\nTip: If using in the morning, be sure to apply SPF as the last step of your skincare routine since vitamin C can cause sun sensitivity. \n",
             "images": ["https://cdn.shopify.com/s/files/1/0249/1218/products/Neogen_Vita_C_Powder_PDP_1_460x.jpg?v=1551797578", "https://cdn.shopify.com/s/files/1/0249/1218/products/Neogen-Vita-C-Powder-PDP-2_460x.jpg?v=1551797580",
             "https://cdn.shopify.com/s/files/1/0249/1218/products/Step_2-3_full_size_460x.jpg?v=1552488862","https://cdn.shopify.com/s/files/1/0249/1218/products/Step_3_460x.jpg?v=1552488866"],
+            // These will be an array of foreign keys used to reference the reviews table
+            "reviews": ["review1", "review2", "review3", "review4"]
         },
         quantity: 1,
         //WILL USE lastUsed for activating and deactivating hidden class
-        lastTab:"details"
+        'lastTabProduct':"details",
+        'lastTabUserInput': "reviews"
     };
   }
   
@@ -49,20 +53,21 @@ class ProductPage extends Component {
     if(ev.target.name == "decrement" && this.state.quantity != 1) {
         this.setState({quantity: this.state.quantity-=1})
     } else if(ev.target.name == "increment") {
-        console.log(this.state.quantity)
         this.setState({quantity: this.state.quantity+=1})
     }
   }
 
   selectTab = (ev) => { 
-    if(ev.target.name != this.state.lastTab) {  
-        let hide =  document.querySelector(`.${this.state.lastTab}`);
+    console.log(ev.target.name);
+    console.log(this.state[ev.target.id]);
+    if(ev.target.name != this.state[ev.target.id]) { 
+        let hide =  document.querySelector(`.${this.state[ev.target.id]}`);
         let activate =  document.querySelector(`.${ev.target.name}`);
         hide.classList.add('hide')
         hide.classList.remove('active')
         activate.classList.add('active')
         activate.classList.remove('hide')
-        this.setState({lastTab: ev.target.name})
+        this.setState({[ev.target.id]: ev.target.name})
     } 
   }
 
@@ -94,10 +99,10 @@ class ProductPage extends Component {
             </div>
             <div className="extra-info">
                 <div className="product-tab-selector">
-                    <button  name="details" onClick={this.selectTab}>Details</button>
-                    <button  name="ingredients" onClick={this.selectTab}>Ingredients</button>
-                    <button  name="howto" onClick={this.selectTab}>How To Use</button>
-                    <button  name="share" onClick={this.selectTab}>Share</button>
+                    <button  name="details" id='lastTabProduct' onClick={this.selectTab}>Details</button>
+                    <button  name="ingredients" id='lastTabProduct' onClick={this.selectTab}>Ingredients</button>
+                    <button  name="howto" id='lastTabProduct' onClick={this.selectTab}>How To Use</button>
+                    <button  name="share" id='lastTabProduct' onClick={this.selectTab}>Share</button>
                 </div>
                 <div className="details active">
                     <span>{product.details}</span>
@@ -125,6 +130,9 @@ class ProductPage extends Component {
                     <FontAwesomeIcon icon={faPinterest}/>
                     <FontAwesomeIcon icon={faEnvelope}/>
                 </div>
+            </div>
+            <div className="product-reviews-container">
+                <ReviewSection selectTab={this.selectTab}/>
             </div>
         </div>
       </div>
