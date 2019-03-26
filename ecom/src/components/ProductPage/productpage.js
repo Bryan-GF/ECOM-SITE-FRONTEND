@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import { faFacebookF, faTwitter, faPinterest } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import ReviewSection from './reviewSection';
+import ReviewSection from './ReviewSection/reviewSection';
 
 class ProductPage extends Component {
   constructor(props) {
@@ -132,7 +132,7 @@ class ProductPage extends Component {
                 </div>
             </div>
             <div className="product-reviews-container">
-                <ReviewSection selectTab={this.selectTab}/>
+                <ReviewSection selectTab={this.selectTab} numReviews={this.state.product.numReviews}/>
             </div>
         </div>
       </div>
