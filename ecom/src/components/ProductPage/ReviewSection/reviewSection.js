@@ -48,10 +48,10 @@ class ReviewSection extends Component {
           <button>Write A Review</button>
           <button>Ask A Question</button>
         </div>
-        <div className='writeReview'>
+        <div className='writeReview-wrapper'>
           <ReviewCreate/>
         </div>
-        <div className='writeQuestion'>
+        <div className='writeQuestion-wrapper'>
           <QuestionCreate/>
         </div>
         <div className='Tab-Selection'>

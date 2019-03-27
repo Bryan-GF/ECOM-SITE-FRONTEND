@@ -5,8 +5,13 @@ import '../productpage.css'
 const QuestionCreate= props => { 
     
     return (
-        <div>
-            
+        <div className='writeQuestion-container'>
+            <h4>ASK A QUESTION</h4>
+            <div>
+                Question:
+                <input type='text' required/>
+            </div>
+            <button>POST</button>
         </div>
     )
     
