@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './productpage.css';
 import Carousel from '../Carousel/carousel';
-import Article from '../klog/article';
+import Article from '../HomePage/klog/article';
 import { NavLink} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';

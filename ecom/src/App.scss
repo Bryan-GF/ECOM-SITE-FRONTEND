@@ -42,6 +42,15 @@ border-collapse: collapse;
 border-spacing: 0;
 }
 
+@import url('https://fonts.googleapis.com/css?family=PT+Sans&display=swap');
+
+@import "./scss/main.scss";
+
+body {
+  font-family: 'PT Sans', sans-serif;
+  color: $main-text;
+}
+
 
 .App {
   text-align: center;

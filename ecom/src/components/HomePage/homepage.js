@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import './homepage.css';
+import './homepage.scss';
 import Carousel from '../Carousel/carousel';
 import ProductCarousel from '../ItemCarousel/productCarousel';
 import ProductCapsule from '../Product/productCapsule';
-import Article from '../klog/article';
+import {TrendTile} from './TrendTile';
+import Article from './klog/article';
 import { NavLink} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHourglass } from '@fortawesome/free-regular-svg-icons'
@@ -100,7 +101,6 @@ class HomePage extends Component {
 
   setType = (ev) => {
     this.setState({filterType: ev.target.name})
-    console.log(ev.target.name);
   }
 
   render() {
@@ -120,46 +120,38 @@ class HomePage extends Component {
           </div>
           <div className="Trending-Wrapper">
             <h2>CURRENTLY TRENDING</h2>
-            <div className="trend-content">
-              <img src="https://cdn.shopify.com/s/files/1/0249/1218/files/Resized_800x.jpg?v=1549034063"></img>
-              <div className="trend-content-text">
-                <h3>Relax Your Skin And Your Mind</h3>
-                <p>A Soothing Vegan Sheet Mask</p>
-              </div>
-              <button>SHOP NOW</button>
+            <div className='trending-tile-container'>
+              <TrendTile
+                tileImage={"https://cdn.shopify.com/s/files/1/0249/1218/files/DSC05693-10_copy_copy_800x.jpg?v=1562080934"}
+                tileTitle={"Meet Korea's #1 Sheet Mask Brand"}
+                tileMainText={"Your One-Sheet Solution"}
+                tileLink={'/shop/productPage/1'}
+                tileLinkText={'LEARN MORE'}
+              />
+              <TrendTile
+                tileImage={"https://cdn.shopify.com/s/files/1/0249/1218/files/09_Trending_050_800x700_65be65e6-a2f4-47b0-9f5c-21689fec21b7_800x.jpg?v=1553534773"}
+                tileTitle={"New To K-Beauty?"}
+                tileMainText={"Shop Our Best of K-Beauty Winners!"}
+                tileLink={'/shop/productPage/1'}
+                tileLinkText={'SHOP NOW'}
+              />
+              <TrendTile
+                tileImage={"https://cdn.shopify.com/s/files/1/0249/1218/files/DSC05752-4_copy_1_800x.png?v=1562080748"}
+                tileTitle={"Match Made In Skin Care Heaven"}
+                tileMainText={"The Perfect Pair To Brighten Your Complexion"}
+                tileLink={'/shop/productPage/1'}
+                tileLinkText={'SHOP NOW'}
+              />
             </div>
-            <div className="trend-content">
-              <img src="https://cdn.shopify.com/s/files/1/0249/1218/files/Currently_Trending_-_BOKB_3_800x.jpg?v=1546468522"></img>
-              <div className="trend-content-text">
-                <h3>New to K-Beauty?</h3>
-                <p>Shop Our Best of K-Beauty Winners!</p>
-              </div>
-              <button>SHOP NOW</button>
-            </div>
-            <div className="trend-content">
-              <img src="https://cdn.shopify.com/s/files/1/0249/1218/files/DSC05130_copy_1_800x.png?v=1547764600"></img>
-              <div className="trend-content-text">
-                <h3>Ancient Ingredients, Modern Glow</h3>
-                <p>Skin Care That Stands The Test Of Time</p>
-              </div>
-              <button>SHOP NOW</button>
-            </div> 
           </div>
           <div className="Curated-Wrapper">
             <h2>NEWLY CURATED</h2>
-            <div className="content-wrapper">
-              <div className="curated-content">
-                <ProductCapsule item={this.state.newlyCurated[0]}/>
-              </div>
-              <div className="curated-content">
-                <ProductCapsule item={this.state.newlyCurated[1]}/>
-              </div>
-              <div className="curated-content">
-                <ProductCapsule item={this.state.newlyCurated[2]}/>
-              </div> 
-              <div className="curated-content">
-                <ProductCapsule item={this.state.newlyCurated[3]}/>
-              </div>
+            <div className="curated-content-wrapper">
+              {this.state.newlyCurated.map(item => {
+                return (
+                  <ProductCapsule item={item}/>
+                )
+              })}
             </div> 
             <div className="curated-button">
                 SHOP ALL NEWLY CURATED

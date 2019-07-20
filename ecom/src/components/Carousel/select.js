@@ -1,5 +1,5 @@
 import React from 'react';
-import '../HomePage/homepage.css'
+import '../HomePage/homepage.scss'
 
 /* NEED TO UPDATE NAVLINK ROUTING*/
 const Select = props => { 

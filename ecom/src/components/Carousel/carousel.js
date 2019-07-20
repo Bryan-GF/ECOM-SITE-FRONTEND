@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../HomePage/homepage.css';
+import '../HomePage/homepage.scss';
 import Arrow from './arrow';
 import Select from './select';
 import Slide from './slide';

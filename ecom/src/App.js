@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+import './App.scss';
 //import { fetchNotes } from './actions';
 import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
@@ -23,9 +23,9 @@ class App extends Component {
     return (
       <div className="App">
         <Navigation/>
-        <HomePage/>
+        <Route exact path='/' component={HomePage} />
         <Footer/>
-        <ProductPage></ProductPage>
+        <Route path='/shop/productPage/:id' component={ProductPage}/>
       </div>
     );
   }

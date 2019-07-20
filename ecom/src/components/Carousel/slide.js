@@ -1,6 +1,6 @@
 
 import React from 'react'
-import '../HomePage/homepage.css'
+import '../HomePage/homepage.scss'
 
 const Slide = (props) => {
     let div;

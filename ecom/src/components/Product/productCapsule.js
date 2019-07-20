@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './product.css';
+import './product.scss';
 
 class ProductCarousel extends Component {
   constructor(props) {
@@ -23,19 +23,22 @@ class ProductCarousel extends Component {
             <div className="item-image">
                 <img src={this.props.item.image}></img> 
             </div>  
-            <div className="item-content">
-                <div className="text-info">
-                    <h3>{this.props.item.brand}</h3>
-                    <h4>{this.props.item.name}</h4>
-                </div>
-                <div className="num-info">
-                    <p>{this.props.item.price}</p>
-                    <div className="review-container">
-                        <div className="rating-container">
-
-                        </div>
+            <div className="item-info">
+                {this.props.item.numreviews > 0 ?
+                    <div className='reviews'>
                         <p>{`(${this.props.item.numreviews} Review)`}</p>
                     </div>
+                    :
+                    null
+                }
+                <a className='brand' href={'/shop/productPage/1'}>{this.props.item.brand}</a>
+                <a className='name' href={'/shop/productPage/1'}>{this.props.item.name}</a>
+                <p>{this.props.item.price}</p>
+                <div className="review-container">
+                    <div className="rating-container">
+
+                    </div>
+                    
                 </div>
             </div>
         </div>

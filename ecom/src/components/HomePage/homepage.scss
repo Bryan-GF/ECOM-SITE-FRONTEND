@@ -1,0 +1,207 @@
+@import "../../scss/main.scss";
+
+.HomePage-Child-Wrapper {
+    
+    margin: 0 auto;
+    width: 100%;
+
+    h2 {
+        width: 100%;
+        letter-spacing: 2px;
+        font-size: 38px;
+        padding-top: 50px;
+    }
+
+    .Trending-Wrapper{
+        max-width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+        
+
+    .trending-tile-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        margin: 30px;
+        margin-bottom: 112px;
+
+        .trending-tile {
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            margin: 10px;
+    
+            .trending-tile-text {
+                min-height: 75px; 
+                margin-top: 20px;
+
+                h3 {
+                    font-size: 1.9vw;
+                }
+
+                p {
+                    font-size: 1rem;
+                    width: 260px;
+                    margin: 0 auto;
+                    letter-spacing: 1.47px;
+                    line-height: 1.5rem;
+                    margin-top: .5rem;
+                }
+            }
+    
+            img {
+                height: calc(30vw);
+                width: 100%;
+            }
+    
+            a {
+                text-decoration: none;
+                background: white;
+                border: 1px solid $main-pink;
+                color: $main-pink;
+                font-size: .6rem;
+                padding: .7rem 1rem;
+                letter-spacing: 2px;
+                margin-top: 20px;
+            }
+
+            a:hover {
+                background: $main-pink;
+                color: white;
+            }
+        }
+
+    }
+    
+
+
+    /*///////////////////////////////////////////////////////////*/
+
+
+    .Curated-Wrapper {
+        margin: 30px;
+        margin-left: 158px;
+        margin-right: 158px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        max-width: 100%;
+
+        .curated-content-wrapper {
+            display: flex;
+            max-width: 100%;
+            justify-content: space-evenly;
+        }
+    }
+
+
+    /*///////////////////////////////////////////////////////////*/
+
+
+    .tenstep-ad {
+        display: flex;
+        flex-direction: row;
+        height: auto;
+
+        .tenstep-info-wrapper{
+            background: #f0f9fe;
+            width: 50%; 
+
+            .tenstep-info-content{
+                padding: 50px;
+            }
+        }
+
+        .tenstep-pic{
+            width: 50%;
+
+            img{
+                width: 100%;
+            }
+        }   
+    }
+
+    /*///////////////////////////////////////////////////////////*/
+
+    .routine-sets {
+        min-width: 400px;
+
+        .set-icons {
+            width: 400px;
+        }
+
+        .routine-content {
+            display: flex;
+            flex-wrap: wrap-reverse;
+            justify-content: center;
+
+            #five {
+                text-align: end;
+            }
+            
+            #ten {
+                text-align: start;
+            }
+            
+            #five, #ten {
+                width: 50%;
+                color: $main-pink;
+            }
+            
+            #five:hover ~ .set-icons #check5{
+                fill: #FFF1F9;
+                color: $main-pink;
+            }
+            
+            #ten:hover ~ .set-icons {
+                fill: #FFF1F9;
+                color: #ec138d;
+            }
+            
+        }
+
+        p {
+            color: #539ac0;
+        }
+    }
+
+    /*///////////////////////////////////////////////////////////*/
+
+}
+
+.Carousel-Wrapper {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  height: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-top: 71px;
+}
+
+.Slider-Wrapper {
+    position: relative;
+    height: 500px;
+    width: 100%;
+}
+
+.headerSlide {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 60%;
+}
+
+.pressSlide {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 60%;
+}
