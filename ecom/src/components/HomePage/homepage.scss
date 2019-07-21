@@ -57,20 +57,12 @@
             }
     
             a {
-                text-decoration: none;
-                background: white;
-                border: 1px solid $main-pink;
-                color: $main-pink;
                 font-size: .6rem;
                 padding: .7rem 1rem;
                 letter-spacing: 2px;
                 margin-top: 20px;
             }
 
-            a:hover {
-                background: $main-pink;
-                color: white;
-            }
         }
 
     }
@@ -81,9 +73,7 @@
 
 
     .Curated-Wrapper {
-        margin: 30px;
-        margin-left: 158px;
-        margin-right: 158px;
+        margin: 0 158px 80px 158px;
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -92,8 +82,24 @@
 
         .curated-content-wrapper {
             display: flex;
-            max-width: 100%;
-            justify-content: space-evenly;
+            flex-direction: column;
+            
+            .curated-items {
+                display: flex;
+                max-width: 100%;
+                justify-content: space-evenly;
+                margin-top: 22px;
+    
+            }
+
+            .button-container {
+                margin-top: 5rem;
+                a {
+                    font-size: .83rem;
+                    letter-spacing: 1px;
+                    padding: .9rem 1.5rem;
+                }
+            }
         }
     }
 

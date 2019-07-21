@@ -1,2 +1,14 @@
 $main-pink: #ec138d;
 $main-text: #333;
+
+.styled-link {
+    text-decoration: none;
+    background: white;
+    border: 1px solid $main-pink;
+    color: $main-pink;
+}
+
+.styled-link:hover {
+    background: $main-pink;
+    color: white;
+}

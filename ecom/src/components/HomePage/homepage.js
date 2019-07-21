@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './homepage.scss';
 import Carousel from '../Carousel/carousel';
 import ProductCarousel from '../ItemCarousel/productCarousel';
-import ProductCapsule from '../Product/productCapsule';
+import {ProductCapsule, CreatorCapsule} from '../Product/productCapsule';
 import {TrendTile} from './TrendTile';
 import Article from './klog/article';
 import { NavLink} from 'react-router-dom';
@@ -21,34 +21,34 @@ class HomePage extends Component {
         "https://images.pexels.com/photos/459301/pexels-photo-459301.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "https://images.pexels.com/photos/66874/landscape-meadow-field-mountains-66874.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"]
         },
         newlyCurated: [
-            {"type" : "newly-curated",
+            {"type" : "curated-creator",
              "brand": "MAMONDE",
              "name": "Mamonde Starter Set",
              "price": "$22.00",
              "rating": 5,
              "numreviews": 1,
-             "image": "https://cdn.shopify.com/s/files/1/0249/1218/products/Mamonde_Starter_PDP_large.jpg?v=1551380013"},
+             "image": "https://cdn.shopify.com/s/files/1/0249/1218/files/june_curations_site_1_1_1_400x.png?v=1559745256"},
             {"type": "newly-curated",
-             "brand": "MISSHA",
-             "name": "Super Off Cleansing Oil (Dryness Off)",
-             "price": "$33.00",
-             "rating": 4,
-             "numreviews": 2,
-             "image": "https://cdn.shopify.com/s/files/1/0249/1218/products/Missha_Super_Off_Cleansing_Oil-_Dryness_Off_PDP_1_large.jpg?v=1550782291"},
+             "brand": "MAMONDE",
+             "name": "Mamonde Exclusive Travel Set",
+             "price": "$20",
+             "rating": 0,
+             "numreviews": 0,
+             "image": "https://cdn.shopify.com/s/files/1/0249/1218/products/Mamonde_Travel_Set_PDP_1_large.jpg?v=1561143211"},
             {"type" : "newly-curated",
-             "brand": "DR ALTHEA",
-             "name": "Dr.Althea Herb Therapy Velvet Mask (10 pack)",
-             "price": "$29.00",
-             "rating": 4.5,
+             "brand": "MEDIHEAL",
+             "name": "N.M.F Intensive Hydrating Sheet Mask",
+             "price": "$9.95",
+             "rating": 5,
              "numreviews": 1,
-             "image": "https://cdn.shopify.com/s/files/1/0249/1218/products/Dr._Althea_Herb_Therapy_Velvet_Mask_10_pack_PDP_1_large.jpg?v=1551842471"},
+             "image": "https://cdn.shopify.com/s/files/1/0249/1218/products/Mediheal_N.M.F_Intensive_Hydrating_Mask_PDP_2_large.jpg?v=1561988564"},
              {"type" : "newly-curated",
-             "brand": "DR ALTHEA",
-             "name": "Dr.Althea Herb Therapy Velvet Mask (10 pack)",
-             "price": "$29.00",
+             "brand": "SOME BY MI",
+             "name": "AHA-BHA-PHA 30Days Miracle Toner",
+             "price": "$16",
              "rating": 4.5,
-             "numreviews": 1,
-             "image": "https://cdn.shopify.com/s/files/1/0249/1218/products/Mamonde_Starter_PDP_large.jpg?v=1551380013"}
+             "numreviews": 2,
+             "image": "https://cdn.shopify.com/s/files/1/0249/1218/products/Some_By_Mi_AHA_BHA_PHA_30_Days_Miracle_Toner_PDP_large.jpg?v=1562868617"}
         ],
         klogTextContent: [
           {
@@ -147,15 +147,19 @@ class HomePage extends Component {
           <div className="Curated-Wrapper">
             <h2>NEWLY CURATED</h2>
             <div className="curated-content-wrapper">
-              {this.state.newlyCurated.map(item => {
-                return (
-                  <ProductCapsule item={item}/>
-                )
-              })}
-            </div> 
-            <div className="curated-button">
-                SHOP ALL NEWLY CURATED
-            </div>
+              <div className='curated-items'>
+                {this.state.newlyCurated.map(item => {
+                  if(item.type === 'newly-curated') {
+                    return <ProductCapsule item={item}/>
+                  } else {
+                    return <CreatorCapsule item={item}/>
+                  }
+                })}
+              </div>
+              <div className='button-container'>
+                <a href='/shop/productPage/1' className='styled-link curated-button'>SHOP ALL NEWLY CURATED </a>
+              </div>
+            </div>   
           </div>
           <div className="tenstep-ad">
             <div className= "tenstep-info-wrapper">

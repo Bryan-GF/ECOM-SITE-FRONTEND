@@ -1,16 +1,44 @@
-.PCapsule-Wrapper-newly-curated {
-
+.Capsule-Wrapper {
+    max-width: 100%;
     margin: 10px;
-    img {
-        width: 100%;
-        
+    
+    .item-image {
+        position: relative;
+        img {
+            width: 100%;
+            
+        }
+
+        .item-badge {
+            position: absolute;
+            width: 100%;
+            bottom: -5px;
+            
+            .badge {
+                background: black;
+                color: white;
+                font-weight: bold;
+                font-size: 10px;
+                letter-spacing: 0.2px;
+                padding: 6px 16px;
+            }
+        }
     }
+
+    .item-image:hover {
+        cursor: pointer;
+    }
+    
+
+    
 
     .item-info {
         display: flex;
         flex-direction: column;
         align-items: start;
         font-size: 14px;
+        line-height: 16px;
+        margin-top: 22px;
 
         a {
             text-align: start;
@@ -25,10 +53,19 @@
         .brand {
             font-weight: bold;
             font-size: 15px;
+            margin: .5rem 0 .1rem;
         }
 
         .brand:hover {
             color: #333;
+        }
+
+        .name {
+            margin: .3rem 0 .4rem;
+        }
+
+        .price {
+            margin-top: .1rem;
         }
 
         .reviews {
@@ -36,5 +73,27 @@
                 font-size: 12px;
             }
         }
+    }
+
+    .creator-info {
+        color: black;
+        padding: 25px;
+        background: #fcf1f6;
+        p {
+            letter-spacing: 1px;
+            font-size: .9rem;
+        }
+
+        h4 {
+            font-size: 1.13rem;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin: .7rem 0;
+        }
+    }
+
+    .creator-info:hover {
+        cursor: pointer;
     }
 }

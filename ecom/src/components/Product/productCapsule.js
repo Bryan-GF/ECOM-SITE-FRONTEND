@@ -1,39 +1,27 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './product.scss';
 
-class ProductCarousel extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-        
-    };
-  }
-  
-  componentDidMount() {
-    
-  }
-
-  componentWillReceiveProps() {
-    
-  }
-
-  render() {
+export const ProductCapsule = (props) => {
     return (
-        <div className={`PCapsule-Wrapper-${this.props.item.type}`}>
+        <div className={`Capsule-Wrapper`}>
             <div className="item-image">
-                <img src={this.props.item.image}></img> 
-            </div>  
+                <img src={props.item.image} alt='curated'></img> 
+                <div className='item-badge'>
+                    <span className='badge'>NEW</span>
+                </div> 
+            </div> 
+           
             <div className="item-info">
-                {this.props.item.numreviews > 0 ?
+                {props.item.numreviews > 0 ?
                     <div className='reviews'>
-                        <p>{`(${this.props.item.numreviews} Review)`}</p>
+                        <p>{`(${props.item.numreviews} Review)`}</p>
                     </div>
                     :
                     null
                 }
-                <a className='brand' href={'/shop/productPage/1'}>{this.props.item.brand}</a>
-                <a className='name' href={'/shop/productPage/1'}>{this.props.item.name}</a>
-                <p>{this.props.item.price}</p>
+                <a className='brand' href={'/shop/productPage/1'}>{props.item.brand}</a>
+                <a className='name' href={'/shop/productPage/1'}>{props.item.name}</a>
+                <p className='price'>{props.item.price}</p>
                 <div className="review-container">
                     <div className="rating-container">
 
@@ -43,7 +31,19 @@ class ProductCarousel extends Component {
             </div>
         </div>
     );
-  }
 }
 
-export default ProductCarousel;
+export const CreatorCapsule = (props) => {
+    return (
+        <div className={`Capsule-Wrapper`}>
+            <div className="item-image">
+                <img src={props.item.image} alt='curated'></img> 
+            </div> 
+            <div className='creator-info'>
+                <p>Check out Charlotte's</p>
+                <h4>June Curations</h4>
+                <img src='//cdn.shopify.com/s/files/1/0249/1218/t/36/assets/youtube-play-icon.svg?314404' alt='youtube logo'/>
+            </div>
+        </div>
+    )
+}

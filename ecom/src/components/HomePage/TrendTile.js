@@ -8,7 +8,7 @@ export const TrendTile = (props) => {
                 <h3>{props.tileTitle}</h3>
                 <p>{props.tileMainText}</p>
             </div>
-            <a href={props.tileLink}>{props.tileLinkText}</a>
+            <a className='styled-link' href={props.tileLink}>{props.tileLinkText}</a>
         </div>
     )
 }
