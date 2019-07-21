@@ -1,9 +1,10 @@
 $main-pink: #ec138d;
 $main-text: #333;
+$sub-text: #539ac0;
 
 .styled-link {
     text-decoration: none;
-    background: white;
+    background: none;
     border: 1px solid $main-pink;
     color: $main-pink;
 }

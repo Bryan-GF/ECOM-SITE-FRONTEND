@@ -164,12 +164,9 @@ class HomePage extends Component {
           <div className="tenstep-ad">
             <div className= "tenstep-info-wrapper">
               <div className= "tenstep-info-content">
-                <div>SOKO GLAM'S ORIGINAL</div>
-                <h3>10-Step Korean Skincare Routine</h3>
-                <p>We introduced the “10-Step Korean Skincare Routine” to the world 5 years ago. Since then, we continue to educate, curate and provide access to the best of K–beauty.</p>
-                <div className="tenstep-button">
-                  LEARN MORE
-                </div>
+                <h3>Soko Glam Guides</h3>
+                <p>We are dedicated to educating our community about all things skincare. We address key steps in your routine, providing guides on the double-cleanse, eye care, and sunscreen.</p>
+                <a href='/shop/productPage/1' className="styled-link tenstep-button">LEARN MORE</a>
               </div>
             </div>
             <div className= "tenstep-pic">
